@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate MCQs</title>
+    
+    <!-- Tailwind CSS from CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Linking to your custom CSS in the static folder -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- Google Fonts for Fancy Text -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-300 flex flex-col items-center justify-center min-h-screen font-poppins">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar w-full bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-lg md:text-xl font-bold text-blue-500 hover:text-blue-400 transition-all duration-300 ease-in-out">MCQ Generator</a>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Features</a></li>
+                <li><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="md:hidden text-blue-500">Menu</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 mt-10 sm:mt-20 flex flex-col items-center justify-center md:flex-row">
+        <div class="form-container bg-gray-800 text-white p-8 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:scale-105">
+            <h1 class="title fancy-text text-center">Generate MCQs</h1>
+            <p class="description text-center">This application generates multiple-choice questions (MCQs) based on the provided text. You can either upload a PDF or TXT file containing the text.</p>
+
+            <form method="POST" enctype="multipart/form-data" class="space-y-6">
+                <div>
+                    <label for="file" class="label">Upload File(s) (PDF or TXT)</label>
+                    <input type="file" id="file" name="files[]" multiple class="input-field bg-gray-700 hover:bg-gray-600 transition-all duration-300 ease-in-out w-full">
+                </div>
+
+                <div>
+                    <label for="num_questions" class="label">Number of Questions:</label>
+                    <select id="num_questions" name="num_questions" class="select-box bg-blue-600 hover:bg-blue-500 transition-all duration-300 ease-in-out w-full">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn bg-blue-600 hover:bg-blue-700 transition-all duration-300 ease-in-out w-full">Generate MCQs</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-xs fixed bottom-0 right-0 bg-gray-800 shadow-lg p-4 rounded-tl-lg">
+        <p>&copy; 2024 MCQ Generator. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            const links = document.querySelector("ul");
+            links.classList.toggle("hidden");
+        });
+    </script>
+</body>
+</html>

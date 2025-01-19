@@ -1,0 +1,168 @@
+/* Custom Styles for Dark Theme with Hover Effects */
+
+/* Font Style */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1F2937;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-link {
+    color: #A0AEC0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #63B3ED;
+    transform: scale(1.05);
+    transition: color 0.3s, transform 0.3s ease-in-out;
+}
+
+/* Mobile Menu Button */
+#menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+#menu-toggle:hover {
+    color: #63B3ED;
+}
+
+/* Form Container */
+.form-container {
+    background-color: #2D3748;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-container:hover {
+    transform: scale(1.05);
+}
+
+/* Title Fancy Text */
+.fancy-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #63B3ED, #3182CE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.title {
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    color: #CBD5E0;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+/* Labels and Input Fields */
+.label {
+    font-weight: 500;
+    color: #E2E8F0;
+    margin-bottom: 0.5rem;
+}
+
+.input-field {
+    padding: 0.75rem;
+    border: 1px solid #4A5568;
+    border-radius: 0.375rem;
+    outline: none;
+    background-color: #4A5568;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #63B3ED;
+    background-color: #2D3748;
+}
+
+.input-field:hover {
+    background-color: #2D3748;
+}
+
+/* Select Box */
+.select-box {
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    outline: none;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.select-box:hover {
+    background-color: #3182CE;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #63B3ED;
+    color: white;
+    padding: 0.85rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2B6CB0;
+    transform: translateY(-5px);
+}
+
+/* Footer */
+.footer {
+    background-color: #1A202C;
+    padding: 0.5rem 1rem;
+    color: #E2E8F0;
+    border-radius: 0.375rem 0 0 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+    font-size: 0.875rem;
+}
+
+/* Responsive Styles */
+
+/* For small screens (max-width: 640px) */
+@media (max-width: 640px) {
+    .form-container {
+        padding: 1.5rem;
+        margin-top: 10rem;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .description {
+        font-size: 0.875rem;
+    }
+
+    .submit-btn {
+        font-size: 0.875rem;
+    }
+}
